@@ -18,6 +18,7 @@ retrieve balance sheet data and simple moving average data. Click on each tab
 to see the result.
 
 Example screen shots:
+
 ![image](https://github.com/JohnMaillet/WinForm/assets/41844233/3bc2d272-acc2-460d-8718-e5098fdd3e18)
 
 
