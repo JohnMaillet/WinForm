@@ -7,8 +7,8 @@ using WinFormsApp.Models;
 
 namespace WinFormsApp.API.Services
 {
-    public interface IBalanceSheetsService
+    internal interface ISmaTechnicalIndicatorService
     {
-        Task<BalanceSheets> GetBalanceSheetAsync(BalanceSheetRequest balanceSheetRequest);
+        Task<SmaTechnicalIndicator> GetSmaTechnicalIndicatorAsync(SmaTechnicalIndicatorRequest smaTechnicalIndicatorRequest);
     }
 }

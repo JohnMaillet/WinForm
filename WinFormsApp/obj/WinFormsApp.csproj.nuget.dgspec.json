@@ -50,6 +50,10 @@
             "RestSharp": {
               "target": "Package",
               "version": "[106.15.0, )"
+            },
+            "WinForms.DataVisualization": {
+              "target": "Package",
+              "version": "[1.9.1, )"
             }
           },
           "imports": [

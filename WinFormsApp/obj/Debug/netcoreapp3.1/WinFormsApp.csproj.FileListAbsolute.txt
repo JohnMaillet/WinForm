@@ -1,0 +1,8 @@
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\obj\Debug\netcoreapp3.1\WinFormsApp.csproj.AssemblyReference.cache
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\obj\Debug\netcoreapp3.1\WinFormsApp.Form1.resources
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\obj\Debug\netcoreapp3.1\WinFormsApp.Properties.Resources.resources
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\obj\Debug\netcoreapp3.1\WinFormsApp.csproj.GenerateResource.cache
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\obj\Debug\netcoreapp3.1\WinFormsApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\obj\Debug\netcoreapp3.1\WinFormsApp.AssemblyInfoInputs.cache
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\obj\Debug\netcoreapp3.1\WinFormsApp.AssemblyInfo.cs
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\obj\Debug\netcoreapp3.1\WinFormsApp.csproj.CoreCompileInputs.cache

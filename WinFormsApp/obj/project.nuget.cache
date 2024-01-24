@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "d885PJLQndzJEDUOdaUccUxvYCnOpPmqVyaZJBGNnje9+BJqXRNRG2oqEL1hnXvOu/hk1SrGwwwK2ErGF843pQ==",
+  "dgSpecHash": "S3bAMvvKj6zKGR9hLfc47helIwNpncaXU0Zv4WRC0TffC517vCOEg1icEcnB3EBuXv53MwPqJun0Ze2G4iP3WQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\jma1l\\source\\repos\\WinFormsApp\\WinFormsApp\\WinFormsApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jma1l\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
-    "C:\\Users\\jma1l\\.nuget\\packages\\restsharp\\106.15.0\\restsharp.106.15.0.nupkg.sha512"
+    "C:\\Users\\jma1l\\.nuget\\packages\\restsharp\\106.15.0\\restsharp.106.15.0.nupkg.sha512",
+    "C:\\Users\\jma1l\\.nuget\\packages\\winforms.datavisualization\\1.9.1\\winforms.datavisualization.1.9.1.nupkg.sha512"
   ],
   "logs": []
 }
