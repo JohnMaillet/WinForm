@@ -17,6 +17,13 @@ When the stock symbol is submitted, a request will be made to an endpoint to
 retrieve balance sheet data and simple moving average data. Click on each tab
 to see the result.
 
+Example screen shots:
+![image](https://github.com/JohnMaillet/WinForm/assets/41844233/3bc2d272-acc2-460d-8718-e5098fdd3e18)
+
+
+![image](https://github.com/JohnMaillet/WinForm/assets/41844233/90d22531-3775-4169-8bcd-d7ee2ae565c8)
+
+
 
 
 
