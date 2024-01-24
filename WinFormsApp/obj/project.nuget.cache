@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "XlYtZEYNoF8y8Ylxv2czSd0BsXWWJPt8nV/2vBGSZ6T9pb/bnOk+RZoMAYDJtFN0gN/ct+j8erVrLEjAD1SjXg==",
+  "dgSpecHash": "d885PJLQndzJEDUOdaUccUxvYCnOpPmqVyaZJBGNnje9+BJqXRNRG2oqEL1hnXvOu/hk1SrGwwwK2ErGF843pQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\jma1l\\source\\repos\\WinFormsApp\\WinFormsApp\\WinFormsApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jma1l\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\jma1l\\.nuget\\packages\\restsharp\\106.15.0\\restsharp.106.15.0.nupkg.sha512"
+  ],
   "logs": []
 }
