@@ -1,0 +1,9 @@
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\bin\Release\net7.0-windows\publish\WinFormsApp.exe
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\bin\Release\net7.0-windows\publish\WinFormsApp.dll
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\bin\Release\net7.0-windows\publish\WinFormsApp.deps.json
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\bin\Release\net7.0-windows\publish\WinFormsApp.runtimeconfig.json
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\bin\Release\net7.0-windows\publish\WinFormsApp.pdb
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\bin\Release\net7.0-windows\publish\Newtonsoft.Json.dll
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\bin\Release\net7.0-windows\publish\RestSharp.dll
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\bin\Release\net7.0-windows\publish\WinForms.DataVisualization.Utilities.dll
+C:\Users\jma1l\source\repos\WinFormsApp\WinFormsApp\bin\Release\net7.0-windows\publish\WinForms.DataVisualization.dll

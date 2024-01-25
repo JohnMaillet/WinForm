@@ -11,22 +11,22 @@ namespace WinFormsApp
     {
         ErrorProvider errorProvider = new ErrorProvider();
         readonly Dictionary<string, TextBox> errorTypes = new Dictionary<string, TextBox>();
-        
+
         public Form1()
         {
             InitializeComponent();
-            errorTypes = new Dictionary<string, TextBox>(new Dictionary<String, TextBox> 
+            errorTypes = new Dictionary<string, TextBox>(new Dictionary<String, TextBox>
             {
                 { "The stock symbol field is required.", textBox1 },
                 { "The api key field is required.", textBox2 }
             });
         }
-        private void formValidate(BalanceSheetRequest balanceSheetRequest, SmaTechnicalIndicatorRequest smaTechnicalIndicatorRequest )
+        private void formValidate(BalanceSheetRequest balanceSheetRequest, SmaTechnicalIndicatorRequest smaTechnicalIndicatorRequest)
         {
-            errorProvider.Clear();                      
+            errorProvider.Clear();
             if (balanceSheetRequest.hasErrors)
             {
-                foreach(var errorMessage in errorTypes)
+                foreach (var errorMessage in errorTypes)
                 {
                     if (balanceSheetRequest.Errors.Contains(errorMessage.Key))
                     {
@@ -35,7 +35,7 @@ namespace WinFormsApp
                 }
             }
         }
-        private async void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             BalanceSheetRequest balanceSheetRequest = new BalanceSheetRequest(
                 stockSymbol: textBox1.Text,
@@ -51,7 +51,7 @@ namespace WinFormsApp
             {
                 return;
             }
-            
+
             populateBalanceSheet(balanceSheetRequest);
             populateSMA(smaRequest);
             if (errorProvider.HasErrors)
@@ -86,12 +86,12 @@ namespace WinFormsApp
                 area.AxisX.Maximum = count;
                 area.AxisY.Maximum = max + 5.0;
             }
-    
+
         }
         private async void populateBalanceSheet(BalanceSheetRequest balanceSheetRequest)
         {
             IBalanceSheetsService balanceSheetsService = new BalanceSheetsService();
-            BalanceSheets balanceSheets = await balanceSheetsService.GetBalanceSheetAsync(balanceSheetRequest);
+            BalanceSheets? balanceSheets = await balanceSheetsService.GetBalanceSheetAsync(balanceSheetRequest);
             this.treeView1.Nodes.Clear();
             TreeNode node = this.treeView1.Nodes.Add("root", $"symbol : {balanceSheets.symbol}");
             TreeNode annualReportsSubNode = node.Nodes.Add("annualReports", "annualReports");
@@ -102,7 +102,7 @@ namespace WinFormsApp
         }
         private void appendTreeNodeToStringBuilder(IEnumerable<BalanceSheet> balanceSheets, TreeNode node)
         {
-            if(balanceSheets!=null)
+            if (balanceSheets != null)
             {
                 foreach (BalanceSheet balanceSheet in balanceSheets.ToList())
                 {
@@ -127,7 +127,7 @@ namespace WinFormsApp
                     }
                 }
             }
-            
+
         }
 
         private void pictureBox1_MouseHover(object sender, EventArgs e)

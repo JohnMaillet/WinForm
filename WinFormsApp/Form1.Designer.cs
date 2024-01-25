@@ -64,7 +64,7 @@
             button1.Location = new Point(12, 182);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
+            button1.TabIndex = 2;
             button1.Text = "Submit";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
@@ -93,7 +93,7 @@
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "API Key value";
             textBox2.Size = new Size(135, 23);
-            textBox2.TabIndex = 7;
+            textBox2.TabIndex = 1;
             // 
             // pictureBox1
             // 

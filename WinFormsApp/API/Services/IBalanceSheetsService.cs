@@ -9,6 +9,6 @@ namespace WinFormsApp.API.Services
 {
     public interface IBalanceSheetsService
     {
-        Task<BalanceSheets> GetBalanceSheetAsync(BalanceSheetRequest balanceSheetRequest);
+        Task<BalanceSheets?> GetBalanceSheetAsync(BalanceSheetRequest balanceSheetRequest);
     }
 }
