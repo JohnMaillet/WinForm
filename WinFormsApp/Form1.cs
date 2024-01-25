@@ -3,49 +3,65 @@ using System.Text;
 using WinFormsApp.API.Services;
 using WinFormsApp.Models;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Collections.ObjectModel;
+
 namespace WinFormsApp
 {
     public partial class Form1 : Form
     {
         ErrorProvider errorProvider = new ErrorProvider();
+        readonly Dictionary<string, TextBox> errorTypes = new Dictionary<string, TextBox>();
+        
         public Form1()
         {
             InitializeComponent();
+            errorTypes = new Dictionary<string, TextBox>(new Dictionary<String, TextBox> 
+            {
+                { "The stock symbol field is required.", textBox1 },
+                { "The api key field is required.", textBox2 }
+            });
         }
-        private void formValidate()
+        private void formValidate(BalanceSheetRequest balanceSheetRequest, SmaTechnicalIndicatorRequest smaTechnicalIndicatorRequest )
         {
-            errorProvider.Clear();
-            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            errorProvider.Clear();                      
+            if (balanceSheetRequest.hasErrors)
             {
-                errorProvider.SetError(textBox1, "A value for the stock symbol is required");
-            }
-            if (string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                errorProvider.SetError(textBox2, "An API Key is required");
+                foreach(var errorMessage in errorTypes)
+                {
+                    if (balanceSheetRequest.Errors.Contains(errorMessage.Key))
+                    {
+                        errorProvider.SetError(errorMessage.Value, balanceSheetRequest.Errors.Where((x) => x == errorMessage.Key).First());
+                    }
+                }
             }
         }
         private async void button1_Click(object sender, EventArgs e)
         {
-            formValidate();
+            BalanceSheetRequest balanceSheetRequest = new BalanceSheetRequest(
+                stockSymbol: textBox1.Text,
+                apiKey: textBox2.Text);
+            SmaTechnicalIndicatorRequest smaRequest = new SmaTechnicalIndicatorRequest(
+                stockSymbol: textBox1.Text,
+                apiKey: textBox2.Text,
+                interval: "weekly",
+                timePeriod: 10,
+                seriesType: "open");
+            formValidate(balanceSheetRequest, smaRequest);
+            if (balanceSheetRequest.hasErrors)
+            {
+                return;
+            }
+            
+            populateBalanceSheet(balanceSheetRequest);
+            populateSMA(smaRequest);
             if (errorProvider.HasErrors)
             {
                 return;
             }
-            populateBalanceSheet();
-
-            populateSMA();
         }
-        private void populateSMA()
+        private void populateSMA(SmaTechnicalIndicatorRequest smaRequest)
         {
             ISmaTechnicalIndicatorService smaTechnicalIndicatorService = new SmaTechnicalIndicatorService();
-            SmaTechnicalIndicatorRequest smaRequest = new SmaTechnicalIndicatorRequest()
-            {
-                stockSymbol = textBox1.Text,
-                apiKey = textBox2.Text,
-                interval = "weekly",
-                timePeriod = 10,
-                seriesType = "open"
-            };
             var response = smaTechnicalIndicatorService.GetSmaTechnicalIndicatorAsync(smaRequest);
             chart1.Series.Clear();
             var series = new Series();
@@ -72,14 +88,8 @@ namespace WinFormsApp
             }
     
         }
-        private async void populateBalanceSheet()
+        private async void populateBalanceSheet(BalanceSheetRequest balanceSheetRequest)
         {
-            BalanceSheetRequest balanceSheetRequest = new BalanceSheetRequest()
-            {
-                stockSymbol = textBox1.Text,
-                apiKey = textBox2.Text,
-            };
-
             IBalanceSheetsService balanceSheetsService = new BalanceSheetsService();
             BalanceSheets balanceSheets = await balanceSheetsService.GetBalanceSheetAsync(balanceSheetRequest);
             this.treeView1.Nodes.Clear();
@@ -125,17 +135,6 @@ namespace WinFormsApp
             PictureBox pictureBox = (PictureBox)sender;
             ToolTip tt = new ToolTip();
             tt.SetToolTip(pictureBox, "An apiKey can be requested here:\r\nhttps://www.alphavantage.co/documentation/");
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

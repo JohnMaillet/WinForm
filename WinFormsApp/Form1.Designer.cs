@@ -152,7 +152,6 @@
             tabPage2.TabIndex = 0;
             tabPage2.Text = "Simple Moving Average";
             tabPage2.UseVisualStyleBackColor = true;
-            tabPage2.Click += tabPage2_Click;
             // 
             // chart1
             // 
@@ -169,7 +168,6 @@
             chart1.Size = new Size(342, 220);
             chart1.TabIndex = 0;
             chart1.Text = "chart1";
-            chart1.Click += chart1_Click;
             // 
             // Form1
             // 

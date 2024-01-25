@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp.Models
 {
-    public class SmaTechnicalIndicatorRequest
+    public class SmaTechnicalIndicatorRequest : BaseStockRequest
     {
-        public string stockSymbol { get; set; }
         public string interval { get; set; }
         public int timePeriod { get; set; }
         public string seriesType { get; set; }
-        public string apiKey { get; set; }
 
         public string functionName {get; }
 
-        public SmaTechnicalIndicatorRequest(string stockSymbol = "", string apiKey = "", string interval = "", int timePeriod = 0, string seriesType = "")
+        public SmaTechnicalIndicatorRequest(string stockSymbol, string apiKey, string interval, int timePeriod, string seriesType)
         {
             this.stockSymbol = stockSymbol;
             this.interval = interval;
@@ -24,6 +22,7 @@ namespace WinFormsApp.Models
             this.seriesType = seriesType;
             this.apiKey = apiKey;
             this.functionName = "SMA";
+            this.validate();
         }
     }
 }
